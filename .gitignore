@@ -1,0 +1,19 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Scripts with embedded secrets
+generate-images.mjs
+
+# Binaries
+cloudflared.exe
+
+# Internal files
+task.txt
+.claude/
+metadata.json
