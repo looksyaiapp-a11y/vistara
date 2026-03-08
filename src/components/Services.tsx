@@ -1,15 +1,17 @@
 import { motion } from 'motion/react';
 import { PenTool, Box, Bug, Layers, Zap, Armchair, Wrench, Sparkles } from 'lucide-react';
 
+const base = import.meta.env.BASE_URL;
+
 const services = [
-  { name: 'Interior Design', icon: PenTool, desc: 'Complete spatial planning and aesthetic design tailored to your vision.', image: '/services/interior-design.jpg' },
-  { name: '3D / 2D Modeling', icon: Box, desc: 'Photorealistic 3D renders and precise 2D layouts before execution.', image: '/services/3d-modeling.jpg' },
-  { name: 'Pest Control', icon: Bug, desc: 'Comprehensive termite and pest treatments to protect your plywood investments.', image: '/services/pest-control.jpg' },
-  { name: 'POP Work', icon: Layers, desc: 'Flawless Plaster of Paris ceilings and wall finishes.', image: '/services/pop-work.jpg' },
-  { name: 'Electric Work', icon: Zap, desc: 'Safe, concealed, and modern electrical wiring and lighting setups.', image: '/services/electric-work.jpg' },
-  { name: 'Furniture Work', icon: Armchair, desc: 'Custom-built premium plywood furniture designed for durability and style.', image: '/services/furniture-work.jpg' },
-  { name: 'Fabrication Work', icon: Wrench, desc: 'Metal and structural fabrication seamlessly integrated with wood.', image: '/services/fabrication-work.jpg' },
-  { name: 'Deep Cleaning', icon: Sparkles, desc: 'Post-execution deep cleaning to hand over a pristine, ready-to-use space.', image: '/services/deep-cleaning.jpg' },
+  { name: 'Interior Design', icon: PenTool, desc: 'Complete spatial planning and aesthetic design tailored to your vision.', image: `${base}services/interior-design.jpg` },
+  { name: '3D / 2D Modeling', icon: Box, desc: 'Photorealistic 3D renders and precise 2D layouts before execution.', image: `${base}services/3d-modeling.jpg` },
+  { name: 'Pest Control', icon: Bug, desc: 'Comprehensive termite and pest treatments to protect your plywood investments.', image: `${base}services/pest-control.jpg` },
+  { name: 'POP Work', icon: Layers, desc: 'Flawless Plaster of Paris ceilings and wall finishes.', image: `${base}services/pop-work.jpg` },
+  { name: 'Electric Work', icon: Zap, desc: 'Safe, concealed, and modern electrical wiring and lighting setups.', image: `${base}services/electric-work.jpg` },
+  { name: 'Furniture Work', icon: Armchair, desc: 'Custom-built premium plywood furniture designed for durability and style.', image: `${base}services/furniture-work.jpg` },
+  { name: 'Fabrication Work', icon: Wrench, desc: 'Metal and structural fabrication seamlessly integrated with wood.', image: `${base}services/fabrication-work.jpg` },
+  { name: 'Deep Cleaning', icon: Sparkles, desc: 'Post-execution deep cleaning to hand over a pristine, ready-to-use space.', image: `${base}services/deep-cleaning.jpg` },
 ];
 
 export default function Services() {
