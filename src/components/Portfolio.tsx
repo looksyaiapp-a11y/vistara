@@ -13,9 +13,10 @@ const portfolioReels = [
 ];
 
 // Height of Instagram embed header & footer to clip
-const CLIP_TOP = 58;
-const CLIP_BOTTOM = 60;
-const CARD_HEIGHT = 480;
+// Footer includes: "View more on Instagram" + icons row + likes + comment box
+const CLIP_TOP = 60;
+const CLIP_BOTTOM = 210;
+const CARD_HEIGHT = 420;
 const IFRAME_HEIGHT = CARD_HEIGHT + CLIP_TOP + CLIP_BOTTOM;
 
 export default function Portfolio() {
@@ -34,7 +35,7 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {portfolioReels.map((reel, index) => (
             <motion.div
               key={reel.id}
@@ -42,7 +43,7 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="relative group rounded-xl overflow-hidden border border-zinc-800 hover:border-amber-500/60 transition-colors duration-300 bg-zinc-900"
+              className="relative group rounded-xl overflow-hidden border border-zinc-800 hover:border-amber-500/60 transition-colors duration-300 bg-zinc-900 w-full max-w-sm mx-auto sm:max-w-none"
               style={{ height: `${CARD_HEIGHT}px` }}
             >
               {/* Clipped iframe showing real thumbnail */}
