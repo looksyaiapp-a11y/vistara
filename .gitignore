@@ -9,6 +9,7 @@ coverage/
 
 # Scripts with embedded secrets
 generate-images.mjs
+download-gallery.mjs
 
 # Binaries
 cloudflared.exe
