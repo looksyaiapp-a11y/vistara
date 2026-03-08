@@ -47,9 +47,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {['Interior Design', '3D / 2D Modeling', 'Pest Control', 'POP Work', 'Electric Work', 'Furniture Work', 'Fabrication Work', 'Deep Cleaning'].map((item) => (
                 <li key={item}>
-                  <span className="text-zinc-500 text-sm">
+                  <a href="#services" className="text-zinc-500 text-sm hover:text-amber-500 transition-colors">
                     {item}
-                  </span>
+                  </a>
                 </li>
               ))}
             </ul>
