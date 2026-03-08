@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { PenTool, Box, Bug, Layers, Zap, Armchair, Wrench, Sparkles, X, ChevronLeft, ChevronRight, Images } from 'lucide-react';
+import { PenTool, Box, Bug, Layers, Zap, Armchair, Wrench, Sparkles, X, ChevronLeft, ChevronRight, Images, Play } from 'lucide-react';
 
 const base = import.meta.env.BASE_URL;
 
-type GalleryItem = { type: 'image'; src: string } | { type: 'instagram'; shortcode: string };
+type GalleryItem = { type: 'image'; src: string } | { type: 'video'; src: string };
 
 const services = [
   {
@@ -44,9 +44,9 @@ const services = [
     gallery: [
       { type: 'image', src: `${base}gallery/furniture-work/1.jpg` } as GalleryItem,
       { type: 'image', src: `${base}gallery/furniture-work/2.jpg` } as GalleryItem,
-      { type: 'instagram', shortcode: 'DVah0EMjOlR' } as GalleryItem,
-      { type: 'instagram', shortcode: 'DVQNDrdjB4s' } as GalleryItem,
-      { type: 'instagram', shortcode: 'DTxbh3mEuo7' } as GalleryItem,
+      { type: 'video', src: `${base}gallery/furniture-work/3.mp4` } as GalleryItem,
+      { type: 'video', src: `${base}gallery/furniture-work/4.mp4` } as GalleryItem,
+      { type: 'video', src: `${base}gallery/furniture-work/5.mp4` } as GalleryItem,
     ],
   },
   {
@@ -184,22 +184,18 @@ export default function Services() {
                   style={{ maxHeight: 'calc(100vh - 180px)' }}
                 />
               ) : (
-                <motion.div
+                <motion.video
                   key={idx}
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.2 }}
-                  className="w-full max-w-sm rounded-xl overflow-hidden shadow-2xl"
-                  style={{ height: '560px' }}
-                >
-                  <iframe
-                    src={`https://www.instagram.com/p/${currentItem.shortcode}/embed/`}
-                    className="w-full h-full border-none"
-                    scrolling="no"
-                    allowTransparency={true}
-                    allow="encrypted-media"
-                  />
-                </motion.div>
+                  src={currentItem.src}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="max-h-full max-w-full rounded-lg shadow-2xl"
+                  style={{ maxHeight: 'calc(100vh - 180px)' }}
+                />
               )}
             </div>
 
@@ -223,8 +219,8 @@ export default function Services() {
                     {item.type === 'image' ? (
                       <img src={item.src} alt="" className="w-full h-full object-cover" />
                     ) : (
-                      <div className="w-full h-full bg-zinc-700 flex items-center justify-center">
-                        <span className="text-white text-xs">▶</span>
+                      <div className="w-full h-full bg-zinc-800 flex items-center justify-center">
+                        <Play size={14} className="text-amber-400" fill="currentColor" />
                       </div>
                     )}
                   </button>
